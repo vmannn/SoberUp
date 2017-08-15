@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="9000px"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="quotebook.theoneandonly.com.soberup.badges">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="268dp"
+        android:layout_height="103dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="92dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <ImageButton
+            android:id="@+id/shadowbadgeday1"
+            android:layout_width="91dp"
+            android:layout_height="108dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday1"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="7dp"/>
+
+        <ImageButton
+            android:id="@+id/shadowbadgeday7"
+            android:layout_width="91dp"
+            android:layout_height="108dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday7"/>
+
+        <ImageButton
+            android:id="@+id/shadowbadgeday14"
+            android:layout_width="91dp"
+            android:layout_height="108dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday14"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="103dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday30"/>
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday60"/>
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday90"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <ImageButton
+            android:id="@+id/imageButton15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday90"/>
+
+        <ImageButton
+            android:id="@+id/imageButton16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/shadowbadgeday365"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

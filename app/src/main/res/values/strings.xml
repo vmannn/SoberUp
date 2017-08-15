@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SoberUp</string>
+    <string name="relapse">RELAPSE</string>
+    <string name="day_s">Day(s)</string>
+</resources>

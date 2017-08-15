@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="quotebook.theoneandonly.com.soberup.urgepics">
+
+    <LinearLayout
+        android:layout_width="365dp"
+        android:layout_height="366dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="129dp">
+
+        <ImageView
+            android:id="@+id/addictionquote1"
+            android:layout_width="wrap_content"
+            android:layout_height="319dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/addictionquote1"
+            tools:layout_editor_absoluteX="133dp"
+            tools:layout_editor_absoluteY="171dp"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

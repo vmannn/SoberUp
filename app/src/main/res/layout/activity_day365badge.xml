@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="9000px"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="quotebook.theoneandonly.com.soberup.badges">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="268dp"
+        android:layout_height="103dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="92dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <ImageButton
+            android:id="@+id/day1badge"
+            android:layout_width="91dp"
+            android:layout_height="108dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day1badge"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="7dp"/>
+
+        <ImageButton
+            android:id="@+id/day7badge"
+            android:layout_width="91dp"
+            android:layout_height="108dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day7badge"/>
+
+        <ImageButton
+            android:id="@+id/day14badge"
+            android:layout_width="91dp"
+            android:layout_height="108dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day14badge"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="103dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout3"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <ImageButton
+            android:id="@+id/day30badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day30badge"/>
+
+        <ImageButton
+            android:id="@+id/day60badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day60badge"/>
+
+        <ImageButton
+            android:id="@+id/day90badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day90badge"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout4"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <ImageButton
+            android:id="@+id/day180badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/day180badge"/>
+
+        <ImageButton
+            android:id="@+id/oneyearbadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/oneyearbadge"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+
