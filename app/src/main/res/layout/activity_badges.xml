@@ -3,10 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="9000px"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="quotebook.theoneandonly.com.soberup.badges">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Welcome to your Badges. As you reach higher milestones, more badges will be displayed!"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"/>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -21,7 +31,7 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/shadowbadgeday1"
             android:layout_width="91dp"
             android:layout_height="108dp"
@@ -30,14 +40,14 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="7dp"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/shadowbadgeday7"
             android:layout_width="91dp"
             android:layout_height="108dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/shadowbadgeday7"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/shadowbadgeday14"
             android:layout_width="91dp"
             android:layout_height="108dp"
@@ -58,21 +68,21 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/shadowbadgeday30"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/shadowbadgeday60"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,14 +104,14 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/shadowbadgeday90"/>
+            app:srcCompat="@drawable/shadowbadgeday180"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

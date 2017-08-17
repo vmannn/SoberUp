@@ -3,19 +3,36 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="9000px"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="quotebook.theoneandonly.com.soberup.badges">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Welcome to your Badges. As you reach higher milestones, more badges will be displayed!"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"/>
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="268dp"
         android:layout_height="103dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="92dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="92dp">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1">
 
-        <ImageButton
-            android:id="@+id/day1badge"
+        <ImageView
+            android:id="@+id/shadowbadgeday1"
             android:layout_width="91dp"
             android:layout_height="108dp"
             android:layout_weight="1"
@@ -23,15 +40,15 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="7dp"/>
 
-        <ImageButton
-            android:id="@+id/day7badge"
+        <ImageView
+            android:id="@+id/shadowbadgeday7"
             android:layout_width="91dp"
             android:layout_height="108dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/day7badge"/>
 
-        <ImageButton
-            android:id="@+id/day14badge"
+        <ImageView
+            android:id="@+id/shadowbadgeday14"
             android:layout_width="91dp"
             android:layout_height="108dp"
             android:layout_weight="1"
@@ -40,28 +57,33 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="268dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="103dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="195dp">
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
 
-        <ImageButton
-            android:id="@+id/day30badge"
+        <ImageView
+            android:id="@+id/imageButton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/day30badge"/>
 
-        <ImageButton
-            android:id="@+id/day60badge"
+        <ImageView
+            android:id="@+id/imageButton8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/day60badge"/>
 
-        <ImageButton
-            android:id="@+id/day90badge"
+        <ImageView
+            android:id="@+id/imageButton9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,20 +91,27 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="264dp"
-        android:layout_height="197dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="298dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
 
-        <ImageButton
-            android:id="@+id/day180badge"
+        <ImageView
+            android:id="@+id/imageButton15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/day180badge"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/imageButton16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,4 +121,3 @@
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
-

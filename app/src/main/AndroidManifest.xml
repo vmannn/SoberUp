@@ -47,6 +47,10 @@
         </activity>
         <activity android:name=".badge_progress">
         </activity>
+        <activity android:name=".journal">
+        </activity>
+        <activity android:name=".viewjournal">
+        </activity>
     </application>
 
 </manifest>

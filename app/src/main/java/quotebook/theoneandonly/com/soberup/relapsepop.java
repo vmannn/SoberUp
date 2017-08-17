@@ -54,7 +54,7 @@ public class relapsepop extends AppCompatActivity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * .5), (int) (height * .5) );
+        getWindow().setLayout((int) (width * .6), (int) (height * .6) );
 
 
 

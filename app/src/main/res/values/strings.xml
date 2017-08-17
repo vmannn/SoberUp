@@ -1,5 +1,11 @@
 <resources>
+
+
     <string name="app_name">SoberUp</string>
     <string name="relapse">RELAPSE</string>
     <string name="day_s">Day(s)</string>
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
+    <string name="diary"></string>
+
 </resources>

@@ -1,6 +1,8 @@
 package quotebook.theoneandonly.com.soberup;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button Relapse;
 
+    private Button my_journal;
+
     private Chronometer tracker;
 
     private int days;
@@ -31,21 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     long time;
 
-    ProgressBar dayy1;
 
-    ProgressBar day7;
-
-    ProgressBar day14;
-
-    ProgressBar day30;
-
-    ProgressBar day60;
-
-    ProgressBar day90;
-
-    ProgressBar day180;
-
-    ProgressBar day365;
 
 
     MainActivity(){
@@ -74,87 +64,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dayy1 = (ProgressBar) findViewById(R.id.day1progressBar);
+        Relapse = (Button) findViewById(R.id.relapse_button);
 
-        day7 = (ProgressBar) findViewById(R.id.day7progressBar);
-
-        day14 = (ProgressBar) findViewById(R.id.day14progressBar);
-
-        day30 = (ProgressBar) findViewById(R.id.day30progressBar);
-
-        day60 = (ProgressBar) findViewById(R.id.day60progressBar);
-
-        day90 = (ProgressBar) findViewById(R.id.day90progressBar);
-
-        day180 = (ProgressBar) findViewById(R.id.day180progressBar);
-
-        day365 = (ProgressBar) findViewById(R.id.day365progressBar);
+        tracker = (Chronometer) findViewById(R.id.tracker);
 
         Relapse = (Button) findViewById(R.id.relapse_button);
 
         tracker = (Chronometer) findViewById(R.id.tracker);
 
-       /* dayy1.setMax(1);
-
-
-        day7.setMax(7);
-
-
-        day14.setMax(14);
-
-        day30.setMax(30);
-
-
-        day60.setMax(60);
-
-
-        day90.setMax(90);
-
-
-        day180.setMax(90);
-
-
-        day365.setMax(90); */
-
-        Relapse = (Button) findViewById(R.id.relapse_button);
-
-        tracker = (Chronometer) findViewById(R.id.tracker);
+        my_journal = (Button) findViewById(R.id.journal_button);
 
         tracker.start();
+
 
         tracker.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
 
 
-                int count1 = 0;
+                long day = SystemClock.elapsedRealtime() - tracker.getBase();
+                day /= 3600000;
 
-                int count7 = 0;
-
-                int count14 = 0;
-
-                int count30 = 0;
-
-                int count60 = 0;
-
-                int count90 = 0;
-
-                int count180 = 0;
-
-                int count365 = 0;
+                long minute = SystemClock.elapsedRealtime() - tracker.getBase();
+                minute /= 1000;
 
                 TextView numb = (TextView) findViewById(R.id.number);
-                Integer.toString(days);
+
                 numb.setText(Integer.toString(days));
 
-                int key = 0;
+                numb.append(" day(s)");
 
-               // if (key == 0) {
 
-                    numb.append(" day(s)");
-                //    key += 1;
-
-              //  }
 
                 time = SystemClock.elapsedRealtime() - tracker.getBase();
 
@@ -173,13 +113,21 @@ public class MainActivity extends AppCompatActivity {
                 tracker.setText(hh + ":" + mm + ":" + ss);
 
 
-                //if(time == 86400000) {
-                if (m == 0) {
-                    // tracker.stop();
-                    //   tracker.setBase(SystemClock.elapsedRealtime());
-                    //  tracker.start();
-                    days += 1;
 
+
+                if(day % 24 == 0 && day != 0) {
+                    days += 1;
+                    tracker.stop();
+                    tracker.setBase(SystemClock.elapsedRealtime());
+                    tracker.start();
+
+
+
+                }
+
+
+
+                if (days == 0) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
                     badges.setOnClickListener(new View.OnClickListener() {
@@ -196,35 +144,9 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                int count2 = 0;
+                if (days == 1) {
 
-                if (m == 1) {
 
-                    if(count1 < 1)
-                       dayy1.setProgress(count2);
-
-                    if(count7 < 7)
-                    day7.setProgress(count2);
-
-                    if(count14 < 14)
-                    day14.setProgress(count2);
-
-                    if(count30 < 30)
-                    day30.setProgress(count2);
-
-                    if(count60 < 60)
-                    day60.setProgress(count2);
-
-                    if(count90 < 90)
-                    day90.setProgress(count2);
-
-                    if(count180 < 180)
-                    day180.setProgress(count2);
-
-                    if(count365 < 365)
-                    day365.setProgress(count2);
-
-                    count2 += 1;
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -244,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                if (m == 2) {
+                if (days == 7) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -263,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (m == 3) {
+                if (days == 14) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -283,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                if (m == 4) {
+                if (days == 30) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -303,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                if (m == 5) {
+                if (days == 60) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -321,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (m == 6) {
+                if (days == 90) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -340,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (m == 7) {
+                if (days == 180) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -358,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                if (m == 8) {
+                if (days == 365) {
 
                     final Button badges = (Button) findViewById(R.id.badges_button);
 
@@ -380,6 +302,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+
 
 
         Relapse.setOnClickListener(new View.OnClickListener() {
@@ -405,6 +329,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        my_journal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent go_journal = new Intent(MainActivity.this, journal.class);
+                startActivity(go_journal);
+
+
+            }
+        });
 
     }
 

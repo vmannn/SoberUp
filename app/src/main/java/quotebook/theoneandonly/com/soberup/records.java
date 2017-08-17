@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static android.text.TextUtils.concat;
+import static quotebook.theoneandonly.com.soberup.R.id.tracker;
+
 public class records extends AppCompatActivity {
 
     @Override
@@ -22,23 +25,47 @@ public class records extends AppCompatActivity {
 
         TextView text2 = (TextView) findViewById(R.id.average_streak);
 
-        text.append(Long.toString(number_provided));
+        text.append(convert(number_provided));
 
         long average_provided = activityThatCalled.getExtras().getLong("toaverage");
 
-        text2.append(Long.toString(average_provided));
+        text2.append(convert(average_provided));
 
         long current_provided = activityThatCalled.getExtras().getLong("tocurrent");
 
         TextView text3 = (TextView) findViewById(R.id.current_streak);
 
-        text3.append(Long.toString(current_provided));
+        text3.append(convert(current_provided));
 
         long total_provided = activityThatCalled.getExtras().getLong("tototal");
 
         TextView text4 = (TextView) findViewById(R.id.total_streak);
 
-        text4.append(Long.toString(total_provided));
+        text4.append(convert(total_provided));
 
     }
-}
+
+
+
+
+    String convert(long time) {
+
+
+
+        //courtesy of https://stackoverflow.com/questions/19667473/
+        // how-to-show-milliseconds-in-dayshoursminseconds
+
+        long seconds = time / 1000;
+        long minutes = seconds / 60;
+        long hours = minutes / 60;
+        long days = hours / 24;
+        String returned = days + ":" + hours % 24 + ":" + minutes % 60 + ":" + seconds % 60;
+
+
+        return returned;
+    }
+
+
+
+
+    }
