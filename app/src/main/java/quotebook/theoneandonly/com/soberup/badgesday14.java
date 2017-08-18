@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Victor Ochia
+ *    This work is available under the "MIT License".
+ *    Please see the file LICENSE for license terms
+ */
+
 package quotebook.theoneandonly.com.soberup;
 
 import android.support.v7.app.AppCompatActivity;

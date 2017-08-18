@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Victor Ochia
+ *    This work is available under the "MIT License".
+ *    Please see the file LICENSE for license terms
+ */
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {

@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) Victor Ochia
+ *    This work is available under the "MIT License".
+ *    Please see the file LICENSE for license terms
+ */
+
 package quotebook.theoneandonly.com.soberup;
 
 import android.content.Context;
@@ -12,12 +18,16 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.util.Date;
 import java.util.Random;
+import java.util.Calendar;
 
 import java.io.Console;
 
 import static android.R.attr.key;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+import static android.os.SystemClock.elapsedRealtime;
 import static quotebook.theoneandonly.com.soberup.R.id.day1progressBar;
 import static quotebook.theoneandonly.com.soberup.R.id.number;
 
@@ -35,12 +45,16 @@ public class MainActivity extends AppCompatActivity {
 
     long time;
 
+    long time_left;
 
+    long time_now;
 
+    long difference;
 
     MainActivity(){
 
         head = null;
+
 
     }
 
@@ -77,15 +91,17 @@ public class MainActivity extends AppCompatActivity {
         tracker.start();
 
 
+        difference = time_now - time_left;
+
         tracker.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
 
 
-                long day = SystemClock.elapsedRealtime() - tracker.getBase();
+                long day = SystemClock.elapsedRealtime() - tracker.getBase() + difference;
                 day /= 3600000;
 
-                long minute = SystemClock.elapsedRealtime() - tracker.getBase();
+                long minute = SystemClock.elapsedRealtime() - tracker.getBase() + difference;
                 minute /= 1000;
 
                 TextView numb = (TextView) findViewById(R.id.number);
@@ -96,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                time = SystemClock.elapsedRealtime() - tracker.getBase();
+                time = SystemClock.elapsedRealtime() - tracker.getBase() + difference;
 
                 int h = (int) (time / 3600000);
 
@@ -324,6 +340,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 tracker.setBase(SystemClock.elapsedRealtime());
+                difference = 0;
                 tracker.start();
 
             }
@@ -340,6 +357,34 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
+    }
+
+
+        protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+
+
+            Date currentTime = Calendar.getInstance().getTime();
+            time_left = currentTime.getTime();
+            outState.putLong("time_left", time_left);
+            currentTime.getTime();
+
+    }
+
+
+
+     protected void onRestoreInstanceState(Bundle savedInstanceState) {
+           super.onRestoreInstanceState(savedInstanceState);
+
+
+         time_left = savedInstanceState.getLong("time_left");
+         Date currentTime = Calendar.getInstance().getTime();
+         time_now = currentTime.getTime();
+
 
     }
 
@@ -474,6 +519,9 @@ public class MainActivity extends AppCompatActivity {
         return total;
 
     }
+
+
+
 
 }
 
