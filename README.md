@@ -3,7 +3,7 @@
 Copyright (c) Victor Ochia   This work is available under the "MIT License" Please see the file LICENSE for license terms.
 For any inquires, please Email : vicochia@pdx.edu. 
 
-What is SoberUp
+# What is SoberUp
 
 SoberUp is an android app made to help alcholics that are ready to become clean through various methods of tracking progress
 and conveying encouragement. SoberUp features A tracker that tells users how long they have been sober as well as displays
@@ -13,7 +13,7 @@ reach milestones in sobriety. A panic button that displays motivational quotes i
 as well as motivational quotes when a user relapses. SoberUp also features a diary that users can use to jot down their
 life of staying clean.
 
-In depth
+# In depth
 
 SoberUp features a chronometer widget to add 24 hour increments which are then converted to days when the chronometer is 
 reset. Badge releases are integrated as activities within the chronometer tick listener Journal uses sharedpreferences to 
@@ -25,13 +25,13 @@ chronometer and days are also reset. However, the quote for the relapse button c
 More information about functionalities are explained in: https://github.com/vmannn/SoberUp/blob/master/docs:quick-talk.pdf
 
 
-How is SoberUp currently
+# How is SoberUp currently
 
 SoberUp is working properly, but there could be improvement with saving information when app is closed. Currently, Journal 
 entries are always saved. Any unknown bugs or concerns can be posted on https://github.com/vmannn/SoberUp/issues
 
 
-Build Instructions
+# Build Instructions
 
 Go to www.androidstudio.com and download the Android Studio IDE. You must have JDK installed as well. After opening a new
 project, clone this repository. Run the application using an emulator (Preferably Nexus 6P API 24 for best results). .APK file
